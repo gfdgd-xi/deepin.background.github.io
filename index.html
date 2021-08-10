@@ -2,7 +2,11 @@
     <title>欢迎</title>
 </head>
 
-<body>
+<body onload="EveryShow();">
+    <h2>其中的一部分照片</h2>
+    <div id="show" style="height: 70%;">
+
+    </div>
     <h2>制作本站目的</h2>
     <p>因为现在 deepin/UOS 的壁纸非常的散，散落在论坛的各个地方，然后偶然刷到一个帖子，便有了这个想法。</p>
     <p>目前我的技术和时间有限，是不会做的很好看的，可能会有疏漏和错误</p>
@@ -91,26 +95,23 @@
         </ul>
     </div>
     <hr/>
-    <!--<h2>图标</h2>
-    <div>
-        <ul>
-            <li>2021-07-15：Bloom Origin 图标，提取分享~（PossibleVing），https://bbs.deepin.org/zh/post/223230</li>
-            <li>2020-05-14：锤子科技SmartisanOS拟物图标（houyawei），https://bbs.deepin.org/zh/post/194268</li>
-        </ul>
-    </div>-->
-    <h2>其中的一部分照片</h2>
-    <p><img src="Picture/Amethyst-Deepin-Logo-2-4K.jpg" width="100%"></p>
-    <p><img src="Picture/Blue-Moon-Deepin-Logo-4K.jpg" width="100%"></p>
-    <p><img src="Picture/desktop.jpg" width="100%"></p>
-    <p><img src="Picture/NeonDeepinLogo-blue.jpg" width="100%"></p>
-    <p><img src="Picture/NeonDeepinLogo-red.jpg" width="100%"></p>
-    <p><img src="Picture/NeonDeepinLogo3.jpg" width="100%"></p>
-    <p><img src="Picture/TheSourceofDeepin.jpg" width="100%"></p>
-    <p><img src="Picture/Crazy-Deepin.jpg" width="100%"></p>
-    <p><img src="Picture/deepin1.jpg" width="100%"></p>
-    <p><img src="Picture/Deepin V20 Original02.jpg" width="100%"></p>
-    <p><img src="Picture/DeepinScienceAndTechnology.jpg" width="100%"></p>
-    <p><img src="Picture/digital-deepin.jpg" width="100%"></p>
-    <p><img src="Picture/Frosted-Glass-Deepin-Logo-4K.jpg" width="100%"></p>
-    <p><img src="Picture/UOS-Brand.jpg" width="100%"></p>
+    
+    
 </body>
+<script>
+    picture = 14;
+    time = 0;
+    pictureList = ["Picture/Amethyst-Deepin-Logo-2-4K.jpg", "Picture/Blue-Moon-Deepin-Logo-4K.jpg", "Picture/desktop.jpg", "Picture/NeonDeepinLogo-blue.jpg",
+    "Picture/NeonDeepinLogo-red.jpg", "Picture/NeonDeepinLogo3.jpg", "Picture/TheSourceofDeepin.jpg", "Picture/Crazy-Deepin.jpg", "Picture/deepin1.jpg", "Picture/Deepin V20 Original02.jpg", 
+"Picture/Deepin V20 Original02.jpg", "Picture/DeepinScienceAndTechnology.jpg", "Picture/digital-deepin.jpg", "Picture/Frosted-Glass-Deepin-Logo-4K.jpg","Picture/UOS-Brand.jpg"];
+    function Show(){
+        time = time + 1;
+        number = time%picture;
+        document.getElementById("show").innerHTML = "<p align='center'><img src='" + pictureList[number] + "' width='50%'></p>"
+    }
+
+    function EveryShow(){
+        Show();
+        setInterval("Show();",1000 * 10);
+    }
+</script>
